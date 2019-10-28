@@ -6,11 +6,16 @@ public class Main {
 	private static Scanner inputNum;
 	private static Scanner inputStr;
 	private WasteInc wasteInc;
-	
+	/**Constructor for class Main<br>
+	*@param name String name of the waste company
+	*<b>pos: </b>Creates an object of class Main and an object of class WasteInc
+	*/
 	public Main(String name){
 		wasteInc = new WasteInc(name);
 	}
-	
+	/**Executable main method.<br>	
+	@param args String[] Default parameter.
+	*/
 	public static void main(String[] args) {
 		Main obj = new Main("3R's-Inc");
 		inputNum = new Scanner(System.in);
@@ -61,7 +66,10 @@ public class Main {
 			}
 		}
 	}
-	
+	/**Interacts with the user, adds a product and one of its residues.<br>
+	*<b>pre: </b>Main object must be created.
+	*<b>pos: </b>Adds a product and one of its residues.
+	*/
 	public void addProduct() {
 		String name = "";
 		String id = "";
@@ -102,7 +110,11 @@ public class Main {
 		
 		
 	}
-	
+	/**Interacts with the user, adds a residue given the product id of the product that produce it.<br>
+	*<b>pre: </b>Main object must be created.
+	*@param productId String id of the product
+	*<b>pos: </b>Adds a residue.
+	*/
 	public void addResidue(String productId) {
 		int resTypeOption = 0;
 		int resOriginOpt = 0;
@@ -277,7 +289,10 @@ public class Main {
 			}
 		}
 	}
-	
+	/**Interacts with the user, adds a residue and the product it came from.<br>
+	*<b>pre: </b>Main object must be created.
+	*<b>pos: </b>Adds a residue and the product that it came from.
+	*/
 	public void addResidueOnly() {
 		String str = wasteInc.toStringPro();
 		boolean check = false;
@@ -311,7 +326,9 @@ public class Main {
 			}			
 		}		
 	}
-
+	/**Interacts with the user, search a residue given the name by the user. Prints the residue information.<br>
+	*<b>pre: </b>Main object must be created.
+	*/
 	public void findResidueByName() {
 		inputStr = new Scanner(System.in);
 		String name = "";
@@ -329,7 +346,9 @@ public class Main {
 		}
 		
 	}
-	
+	/**Interacts with the user, search a residue given its id by the user. Prints the residue information.<br>
+	*<b>pre: </b>Main object must be created.
+	*/
 	public void findResidueById() {
 		inputStr = new Scanner(System.in);
 		String id = "";
@@ -347,7 +366,9 @@ public class Main {
 		}
 		
 	}
-	
+	/**Interacts with the user, prints the residues of a product asking for the product id, if no product, it prints an error.<br>
+	*<b>pre: </b>Main object must be created.
+	*/
 	public void printProResOR() {
 		inputStr = new Scanner(System.in);
 		String id = "";
@@ -364,7 +385,9 @@ public class Main {
 			System.out.println(str);
 		}	
 	}
-
+	/**Interacts with the user, prints the products, if there are no products it prints an error.<br>
+	*<b>pre: </b>Main object must be created.
+	*/
 	public void printProducts() {
 		String str = "";
 		str = wasteInc.toStringPro();		
@@ -376,7 +399,9 @@ public class Main {
 			System.out.println(str);
 		}
 	}
-	
+	/**Interacts with the user, prints a report of the residues organized by residue type.<br>
+	*<b>pre: </b>Main object must be created.
+	*/
 	public void generateReport() {
 		System.out.println(wasteInc.generateReport());
 	}
